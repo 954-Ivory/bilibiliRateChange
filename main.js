@@ -56,11 +56,7 @@ function setRateText(rate) {
 const initRateBody = function(callBack) {
     waitForNode(() => document.querySelector('div.bilibili-player-video-btn-speed > div > ul')||document.querySelector("ul.squirtle-select-list.squirtle-speed-select-list.squirtle-dialog"),
         (node) => {
-            var oV = document.getElementsByTagName("video")[0];
-            if (oV == undefined) {
-                alert("清空缓存后刷新即可使用")
-                return;
-            }
+            var oV = document.querySelector("video")?document.querySelector("video"): document.querySelector("bwp-video")
             deleteChild(node)
             for (let i of rateArr) {
 
